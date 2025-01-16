@@ -60,12 +60,17 @@ header {
             li {
                 a {
                     padding: 10px 30px;
+                    transition: border-bottom 0.5s;
+                    border-bottom: solid $color1 1.5px;
                     &:hover {
                         border-bottom: solid $light 1.5px;
                     }
 
                     @media only screen and (max-width: $mobile) {
                         padding: 10px;
+                        &:hover {
+                            border-bottom: solid $color1 1.5px;
+                        }
                     }
                 }
             }
@@ -76,6 +81,15 @@ header {
         width: 95%;
         background-color: $light;
         justify-content: left;
+
+        a {
+            border-bottom: solid $light 2px;
+            transition: border-bottom 0.5s;
+            
+            &:hover {
+                border-bottom: solid $dark 2px;
+            }
+        }
     }
 
     @media only screen and (max-width: $mobile) {
@@ -83,6 +97,14 @@ header {
 
         nav {
             height: 50px;
+        }
+
+        h1 {
+            a {
+                &:hover {
+                    border-bottom: solid $light 2px;
+                }
+            }
         }
     }
 }
@@ -102,8 +124,29 @@ main {
         min-height: calc(100vh - 225px);
     }
 
-    a {
+    .enter-site {
         text-decoration: none;
+        width: 100%;
+        padding-top: 100px;
+        padding-bottom: 50px;
+
+        hr {
+            transition: height 0.5s;
+        }
+
+        &:hover {
+            hr {
+                height: 3px;
+            }
+        }
+
+        @media only screen and (max-width: $mobile) {
+            &:hover {
+                hr {
+                    height: 1px;
+                }
+            }
+        }
     }
 }
 
@@ -124,6 +167,12 @@ section {
         @media only screen and (max-width: $mobile) {
             width: 90%;
         }
+    }
+
+    .banner {
+        width: 90%;
+        height: 200px;
+        margin-top: 20px;
     }
 
     p {
@@ -158,7 +207,7 @@ section {
 
     @media only screen and (max-width: $mobile) {
         width: 90%;
-        padding-top: 20px;
+        padding-top: 25px;
         margin-bottom: -145px;
 
         img {
