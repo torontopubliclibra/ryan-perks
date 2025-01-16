@@ -281,7 +281,7 @@ body a {
 }
 @media only screen and (max-width: 768px) {
   body {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -355,6 +355,38 @@ h4 {
   font-weight: 400;
 }
 
+blockquote {
+  display: flex;
+  flex-direction: column;
+  padding-right: 0;
+  padding-left: 30px;
+  border-left: solid #151B23 3px;
+}
+blockquote p {
+  width: 100% !important;
+}
+blockquote cite {
+  max-width: 90%;
+  align-self: flex-end;
+  font-style: normal;
+  text-align: right;
+  font-family: "Newsreader", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+blockquote cite .title {
+  font-family: "Newsreader-Italic", serif;
+}
+@media only screen and (max-width: 768px) {
+  blockquote {
+    padding-left: 20px;
+  }
+  blockquote cite {
+    max-width: 95%;
+    font-size: 1rem;
+  }
+}
+
 button {
   margin: 20px auto;
   padding: 10px 25px;
@@ -385,7 +417,7 @@ button:hover {
   padding: 10px 25px;
   background-color: #151B23;
   margin-bottom: 20px;
-  width: 25%;
+  width: 40%;
   border-bottom: solid #151B23 2px;
   cursor: pointer;
 }
@@ -409,7 +441,7 @@ button:hover {
     width: 100%;
     margin-bottom: 20px;
   }
-  .button p {
+  .button a {
     font-size: 1.25rem;
   }
 }
