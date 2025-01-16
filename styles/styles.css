@@ -419,6 +419,9 @@ section p:first-of-type {
 section h4 {
   margin-bottom: 10px;
 }
+section a:hover {
+  font-style: italic;
+}
 
 footer {
   font-family: "PT-Sans", sans-serif;
