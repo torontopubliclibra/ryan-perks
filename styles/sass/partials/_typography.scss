@@ -1,0 +1,211 @@
+@use 'variables' as *;
+
+// font import
+@font-face {
+  font-family: "Newsreader";
+  src: url(/assets/fonts/Newsreader/Newsreader-VariableFont_opsz\,wght.ttf) format("truetype");
+  font-display: swap;
+}
+
+// font import
+@font-face {
+  font-family: "Newsreader-Italic";
+  src: url(/assets/fonts/Newsreader/Newsreader-Italic-VariableFont_opsz\,wght.ttf) format("truetype");
+  font-display: swap;
+}
+
+// font import
+@font-face {
+  font-family: "PT-Sans";
+  src: url(/assets/fonts/PT_Sans/PTSans-Regular.ttf) format("truetype");
+  font-display: swap;
+}
+
+// font import
+@font-face {
+  font-family: "PT-Sans-Italic";
+  src: url(/assets/fonts/PT_Sans/PTSans-Italic.ttf) format("truetype");
+  font-display: swap;
+}
+
+// font import
+@font-face {
+  font-family: "PT-Sans-Bold";
+  src: url(/assets/fonts/PT_Sans/PTSans-Bold.ttf) format("truetype");
+  font-display: swap;
+}
+
+// font variables
+$font1: 'Newsreader', serif;
+$font2: 'Newsreader-Italic', serif;
+$font3: 'PT-Sans', sans-serif;
+$font4: 'PT-Sans-Bold', sans-serif;
+
+body {
+  text-align: left;
+  font-family: $font3;
+  letter-spacing: 3%;
+  line-height: 200%;
+  font-size: 17px;
+  font-weight: 500;
+  color: $dark;
+  a {
+    color: $dark;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    font-size: 0.9rem;
+  }
+}
+
+hr {
+  width: 100%;
+  background-color: rgba($color1, 0.8);
+  border-style: solid;
+  border-color: rgba($color1, 0.8);
+  height: 0.5px;
+  box-shadow: none;
+}
+
+label {
+  font-family: $font2;
+  color: $light;
+}
+
+input, textarea {
+  font-weight: 500;
+  font-family: $font4;
+  letter-spacing: 3%;
+  line-height: 200%;
+  color: $dark;
+}
+
+h1, h2, h3, h4 {
+  font-family: $font1;
+  font-weight: 600;
+  margin: 0;
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: 600;
+  margin-bottom: 50px;
+  text-align: center;
+
+  @media only screen and (max-width: $mobile) {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+  }
+}
+
+h2 {
+  font-family: $font2;
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 20px;
+  text-align: center;
+
+  @media only screen and (max-width: $mobile) {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+  }
+}
+
+h3 {
+  font-family: $font1;
+  font-size: 2.5rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+h4 {
+  font-family: $font1;
+  font-size: 1.75rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+button {
+  padding: 10px 25px;
+  background-color: $color1;
+  font-family: $font2;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: $light;
+  border: none;
+  border-bottom: solid $color1 2px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $light;
+    color: $dark;
+  }
+}
+
+header {
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: left;
+
+    a {
+      text-decoration: none;
+    }
+  }
+  nav {
+    ul li {
+      font-family: $font2;
+      font-weight: 400;
+      font-size: 1.5rem;
+      color: $light;
+      a {
+        color: $light;
+        text-decoration: none;
+      }
+
+      @media only screen and (max-width: $mobile) {
+        font-size: 1.15rem;
+      }
+    }
+  }
+}
+
+main {
+  p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+
+    @media only screen and (max-width: $mobile) {
+      font-size: 1rem;
+      margin-top: 0;
+    }
+  }
+}
+
+section {
+  h3, p {
+    text-align: left;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    &:first-of-type {
+      margin-top: 20px;
+    }
+  }
+
+  h4 {
+    margin-bottom: 10px;
+  }
+}
+
+footer {
+  font-family: $font3;
+
+  a:hover {
+    font-style: italic;
+  }
+}

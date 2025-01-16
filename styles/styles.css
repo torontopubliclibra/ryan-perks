@@ -1,0 +1,651 @@
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+article, aside, footer, header, nav, section {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+figcaption, figure, main {
+  display: block;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: inherit;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+audio, video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, html [type=button], [type=reset], [type=submit] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox], [type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details, menu {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+canvas {
+  display: inline-block;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: "";
+  clear: both;
+  height: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+main, section *, footer {
+  animation: fade-in 1s;
+}
+
+@font-face {
+  font-family: "Newsreader";
+  src: url(/assets/fonts/Newsreader/Newsreader-VariableFont_opsz\,wght.ttf) format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Newsreader-Italic";
+  src: url(/assets/fonts/Newsreader/Newsreader-Italic-VariableFont_opsz\,wght.ttf) format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "PT-Sans";
+  src: url(/assets/fonts/PT_Sans/PTSans-Regular.ttf) format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "PT-Sans-Italic";
+  src: url(/assets/fonts/PT_Sans/PTSans-Italic.ttf) format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "PT-Sans-Bold";
+  src: url(/assets/fonts/PT_Sans/PTSans-Bold.ttf) format("truetype");
+  font-display: swap;
+}
+body {
+  text-align: left;
+  font-family: "PT-Sans", sans-serif;
+  letter-spacing: 3%;
+  line-height: 200%;
+  font-size: 17px;
+  font-weight: 500;
+  color: #191919;
+}
+body a {
+  color: #191919;
+}
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+  }
+}
+
+hr {
+  width: 100%;
+  background-color: rgba(21, 27, 35, 0.8);
+  border-style: solid;
+  border-color: rgba(21, 27, 35, 0.8);
+  height: 0.5px;
+  box-shadow: none;
+}
+
+label {
+  font-family: "Newsreader-Italic", serif;
+  color: #EEE8E8;
+}
+
+input, textarea {
+  font-weight: 500;
+  font-family: "PT-Sans-Bold", sans-serif;
+  letter-spacing: 3%;
+  line-height: 200%;
+  color: #191919;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Newsreader", serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: 600;
+  margin-bottom: 50px;
+  text-align: center;
+}
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+  }
+}
+
+h2 {
+  font-family: "Newsreader-Italic", serif;
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 20px;
+  text-align: center;
+}
+@media only screen and (max-width: 768px) {
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+  }
+}
+
+h3 {
+  font-family: "Newsreader", serif;
+  font-size: 2.5rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+h4 {
+  font-family: "Newsreader", serif;
+  font-size: 1.75rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+button {
+  padding: 10px 25px;
+  background-color: #151B23;
+  font-family: "Newsreader-Italic", serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #EEE8E8;
+  border: none;
+  border-bottom: solid #151B23 2px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #EEE8E8;
+  color: #191919;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: left;
+}
+header h1 a {
+  text-decoration: none;
+}
+header nav ul li {
+  font-family: "Newsreader-Italic", serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #EEE8E8;
+}
+header nav ul li a {
+  color: #EEE8E8;
+  text-decoration: none;
+}
+@media only screen and (max-width: 768px) {
+  header nav ul li {
+    font-size: 1.15rem;
+  }
+}
+
+main p {
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+@media only screen and (max-width: 768px) {
+  main p {
+    font-size: 1rem;
+    margin-top: 0;
+  }
+}
+
+section h3, section p {
+  text-align: left;
+}
+section p {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+section p:first-of-type {
+  margin-top: 20px;
+}
+section h4 {
+  margin-bottom: 10px;
+}
+
+footer {
+  font-family: "PT-Sans", sans-serif;
+}
+footer a:hover {
+  font-style: italic;
+}
+
+body {
+  background-color: #EEE8E8;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1260px;
+  width: 85%;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
+header {
+  z-index: 100;
+  height: 150px;
+  position: sticky;
+  top: 0;
+}
+header nav, header h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #151B23;
+  height: 75px;
+  width: 101%;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+header nav#main-nav, header h1#main-nav {
+  top: 75px;
+}
+header nav ul, header h1 ul {
+  padding: 0;
+  width: 95%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+header nav ul li a, header h1 ul li a {
+  padding: 10px 30px;
+}
+header nav ul li a:hover, header h1 ul li a:hover {
+  border-bottom: solid #EEE8E8 1.5px;
+}
+@media only screen and (max-width: 768px) {
+  header nav ul li a, header h1 ul li a {
+    padding: 10px;
+  }
+}
+header h1 {
+  width: 95%;
+  background-color: #EEE8E8;
+  justify-content: left;
+}
+@media only screen and (max-width: 768px) {
+  header {
+    height: 125px;
+  }
+  header nav {
+    height: 50px;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background-color: #EEE8E8;
+  min-height: calc(100vh - 250px);
+  padding-bottom: 10px;
+}
+@media only screen and (max-width: 768px) {
+  main {
+    font-size: 3.5rem;
+    min-height: calc(100vh - 225px);
+  }
+}
+main a {
+  text-decoration: none;
+}
+
+section {
+  background-color: #EEE8E8;
+  padding: 20px 0;
+  padding-top: 170px;
+  margin-bottom: -170px;
+}
+@media only screen and (max-width: 768px) {
+  section {
+    padding-top: 140px;
+    margin-bottom: -140px;
+  }
+}
+section h3 {
+  width: 100%;
+}
+@media only screen and (max-width: 768px) {
+  section h3 {
+    width: 90%;
+  }
+}
+section p {
+  width: 90%;
+}
+section p.services-bullet {
+  margin-left: 30px;
+  display: list-item;
+  list-style-position: outside;
+}
+section h4 {
+  width: 90%;
+}
+
+#headshot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1260px;
+  width: 85%;
+  padding-top: 40px;
+  margin: 0 auto;
+  margin-bottom: -160px;
+}
+#headshot img {
+  width: 100%;
+  height: auto;
+}
+@media only screen and (max-width: 768px) {
+  #headshot {
+    width: 90%;
+    padding-top: 20px;
+    margin-bottom: -145px;
+  }
+  #headshot img {
+    height: 300px;
+  }
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+#contact form fieldset {
+  background-color: #151B23;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  border: none;
+  padding: 2% 0;
+}
+#contact form fieldset label, #contact form fieldset input, #contact form fieldset textarea {
+  width: 90%;
+  min-width: 90%;
+}
+#contact form fieldset label {
+  margin-top: 15px;
+}
+#contact form fieldset input, #contact form fieldset textarea {
+  border: none;
+  background-color: rgba(238, 232, 232, 0.9);
+  min-height: 40px;
+  padding: 5px 10px;
+}
+#contact form fieldset textarea {
+  min-height: 150px;
+}
+#contact form fieldset p {
+  padding-top: 10px;
+  font-size: 0.9rem !important;
+  width: 100%;
+  text-align: right !important;
+}
+#contact form button {
+  width: 30%;
+  margin: 20px auto;
+}
+@media only screen and (max-width: 768px) {
+  #contact form button {
+    width: 100%;
+  }
+}
+
+footer {
+  height: 100px;
+}
+footer .wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer .wrapper p {
+  margin: 0;
+}
+footer#main-footer {
+  margin-top: 170px;
+}
+@media only screen and (max-width: 768px) {
+  footer#main-footer {
+    margin-top: 150px;
+  }
+}
