@@ -3,22 +3,36 @@ let app = {
 
     // page elements
     elements: {
-        body: $("body"),
-        nav: $("nav"),
-        scrollTopButton: $(".scroll-to-top"),
+        about: $("#about"),
+        services: $("#services"),
+        testimonials: $("#testimonials"),
+        contact: $("#contact"),
+        aboutLink: $("nav .about"),
+        servicesLink: $("nav .services"),
+        testimonialsLink: $("nav .testimonials"),
+        contactLink: $("nav .contact"),
+        scrollTopButton: $("footer .button"),
     },
 
     // app functions
     functions: {
 
-        // smoothly scroll to top function
-        scrollTop: () => {
+        // smoothly scroll to location
+        scroll: (direction) => {
 
-            // smoothly scroll to the top of the page
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+            // establish an empty variable
+            let location = "";
+
+            // if the direction is "top", set the location to the top of the page
+            if (direction === "top") {
+                location = 0;
+            // if the direction is anything else, set the location to the top of that section
+            } else {
+                location = app.elements[direction].offset().top;
+            };
+
+            // smoothly scroll to the location
+            window.scrollTo({top: location, behavior: "smooth"});
 
             // blur the button after scroll
             document.activeElement.blur();
@@ -39,65 +53,34 @@ let app = {
                 app.scrollTop();
             };
         },
-
-        // toggle classes to hide or show the nav
-        toggleNav: () => {
-            app.elements.body.toggleClass("nav-open");
-            app.elements.nav.toggleClass("active");
-        },
-
-        // mobile hamburger nav function
-        // hamburgerFunction: () => {
-
-        //     // if nav is closed
-        //     if(!app.navUl.style.display){
-
-        //         // open nav
-        //         app.hamburger.classList.add('open');
-        //         app.body.classList.add('nav-open');
-        //         app.navUl.style.display = 'flex';
-        //         app.navUl.style.animation = 'fade-in 0.75s';
-        //         app.navUl.style.opacity = '1';
-
-        //         // after nav is finished opening
-        //         setTimeout(function(){
-
-        //             // remove animation
-        //             app.navUl.style.animation = '';
-
-        //         }, 750)
-
-        //     // if nav is open
-        //     } else {
-
-        //         // close nav
-        //         app.hamburger.classList.remove('open');
-        //         app.body.classList.remove('nav-open');
-        //         app.navUl.style.animation = 'fade-out 0.75s';
-
-        //         // after nav is finished hiding
-        //         setTimeout(function(){
-
-        //             // remove animation, opacity, and display values
-        //             app.navUl.style.opacity = '0';
-        //             app.navUl.style.display = '';
-        //             app.navUl.style.animation = '';
-
-        //         }, 750)
-
-        //     }
-
-        // }
     },
 
     // app event listeners
     events: () => {
 
-        // on the nav button click, toggle the nav
-        app.elements.nav.click(app.functions.toggleNav);
-
         // scroll up to top of browser window on button click
-        app.elements.scrollTopButton.click(app.functions.scrollTop);
+        app.elements.scrollTopButton.click((e) => {
+            e.preventDefault();
+            app.functions.scroll("top");
+        });
+
+        // scroll to top of sections on nav link click
+        app.elements.aboutLink.click((e) => {
+            e.preventDefault();
+            app.functions.scroll("about");
+        });
+        app.elements.servicesLink.click((e) => {
+            e.preventDefault();
+            app.functions.scroll("services");
+        });
+        app.elements.testimonialsLink.click((e) => {
+            e.preventDefault();
+            app.functions.scroll("testimonials");
+        });
+        app.elements.contactLink.click((e) => {
+            e.preventDefault();
+            app.functions.scroll("contact");
+        });
 
     },
     

@@ -207,21 +207,13 @@ section {
                 text-align: right !important;
             }
         }
-        button {
-            width: 30%;
-            margin: 20px auto;
-
-            @media only screen and (max-width: $mobile) {
-                width: 100%;
-            }
-        }
     }
 }
 
 footer {
     height: 100px;
     .wrapper {
-        width: 100%;
+        width: 90%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -233,6 +225,7 @@ footer {
     }
 
     &#main-footer {
+        height: 170px;
         margin-top: 170px;
 
         @media only screen and (max-width: $mobile) {

@@ -127,6 +127,7 @@ h4 {
 }
 
 button {
+  margin: 20px auto;
   padding: 10px 25px;
   background-color: $color1;
   font-family: $font2;
@@ -136,10 +137,54 @@ button {
   border: none;
   border-bottom: solid $color1 2px;
   cursor: pointer;
+  width: 40%;
 
   &:hover {
     background-color: $light;
     color: $dark;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    width: 100%;
+    font-size: 1.25rem;
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  padding: 10px 25px;
+  background-color: $color1;
+  margin-bottom: 20px;
+  width: 25%;
+  border-bottom: solid $color1 2px;
+  cursor: pointer;
+  
+  a {
+    line-height: 125%;
+    font-family: $font2;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: $light;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: $light;
+
+    a {
+      color: $dark;
+      font-style: normal;
+    }
+  }
+
+  @media only screen and (max-width: $mobile) {
+    width: 100%;
+    margin-bottom: 20px;
+
+    p {
+      font-size: 1.25rem;
+    }
   }
 }
 

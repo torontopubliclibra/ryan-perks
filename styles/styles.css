@@ -356,6 +356,7 @@ h4 {
 }
 
 button {
+  margin: 20px auto;
   padding: 10px 25px;
   background-color: #151B23;
   font-family: "Newsreader-Italic", serif;
@@ -365,10 +366,52 @@ button {
   border: none;
   border-bottom: solid #151B23 2px;
   cursor: pointer;
+  width: 40%;
 }
 button:hover {
   background-color: #EEE8E8;
   color: #191919;
+}
+@media only screen and (max-width: 768px) {
+  button {
+    width: 100%;
+    font-size: 1.25rem;
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  padding: 10px 25px;
+  background-color: #151B23;
+  margin-bottom: 20px;
+  width: 25%;
+  border-bottom: solid #151B23 2px;
+  cursor: pointer;
+}
+.button a {
+  line-height: 125%;
+  font-family: "Newsreader-Italic", serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #EEE8E8;
+  text-decoration: none;
+}
+.button:hover {
+  background-color: #EEE8E8;
+}
+.button:hover a {
+  color: #191919;
+  font-style: normal;
+}
+@media only screen and (max-width: 768px) {
+  .button {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .button p {
+    font-size: 1.25rem;
+  }
 }
 
 header h1 {
@@ -621,21 +664,12 @@ section h4 {
   width: 100%;
   text-align: right !important;
 }
-#contact form button {
-  width: 30%;
-  margin: 20px auto;
-}
-@media only screen and (max-width: 768px) {
-  #contact form button {
-    width: 100%;
-  }
-}
 
 footer {
   height: 100px;
 }
 footer .wrapper {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -645,6 +679,7 @@ footer .wrapper p {
   margin: 0;
 }
 footer#main-footer {
+  height: 170px;
   margin-top: 170px;
 }
 @media only screen and (max-width: 768px) {
