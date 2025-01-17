@@ -19,6 +19,7 @@ let app = {
         sliderContainer: document.querySelector("#testimonial-slider"),
         slides: document.querySelectorAll(".slide"),
         nextButton: $(".next-slide"),
+        prevButton: $(".prev-slide"),
         currentSlide: 0,
         maxSlide: 0,
     },
@@ -98,6 +99,42 @@ let app = {
 
 
         },
+
+        // testimonial slider prev button function
+        prevSlideFunction: () => {
+
+            // if the current slide is the first
+            if (app.slider.currentSlide === 0) {
+
+                // change it to the last slide
+                app.slider.currentSlide = app.slider.maxSlide;
+
+            } else {
+
+                // otherwise move back one slide
+                app.slider.currentSlide--;
+            }
+
+            // loop through slides
+            app.slider.slides.forEach((slide, index) => {
+
+                // move them all back by one slide
+                slide.style.transform = `translateX(${105 * (index - app.slider.currentSlide)}%)`;
+
+                // correct the height of the slider to match the currentSlide
+                if ((index) === app.slider.currentSlide) {
+                    const slideHeight = slide.offsetHeight;
+                    app.slider.sliderContainer.style.height = `${slideHeight}px`;
+                }
+
+            });
+
+            if (window.screenTop !== app.elements.testimonials.offset().top) {
+                window.scrollTo({top: app.elements.testimonials.offset().top, behavior: "smooth"});
+            }
+
+
+        },
     },
 
     // app event listeners
@@ -144,6 +181,9 @@ let app = {
         // navigate slider on click
         app.slider.nextButton.click(() => {
             app.functions.nextSlideFunction();
+        });
+        app.slider.prevButton.click(() => {
+            app.functions.prevSlideFunction();
         });
 
     },
