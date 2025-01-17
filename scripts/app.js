@@ -92,6 +92,10 @@ let app = {
 
             });
 
+            if (window.screenTop !== app.elements.testimonials.offset().top) {
+                window.scrollTo({top: app.elements.testimonials.offset().top, behavior: "smooth"});
+            }
+
 
         },
     },
