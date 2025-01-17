@@ -14,6 +14,13 @@ let app = {
         scrollTopButton: $("footer .button"),
     },
 
+    slider: {
+        slides: document.querySelectorAll(".slide"),
+        nextButton: $(".next-slide"),
+        currentSlide: 0,
+        maxSlide: 0,
+    },
+
     // app functions
     functions: {
 
@@ -53,6 +60,31 @@ let app = {
                 app.scrollTop();
             };
         },
+
+        // testimonial slider next button function
+        nextSlideFunction: () => {
+
+            // if the current slide is the last
+            if (app.slider.currentSlide === app.slider.maxSlide) {
+
+                // change it to the first slide
+                app.slider.currentSlide = 0;
+
+            } else {
+
+                // otherwise move forward one slide
+                app.slider.currentSlide++;
+            }
+
+            // loop through slides
+            app.slider.slides.forEach((slide, index) => {
+
+                // move them all forward by one slide
+                slide.style.transform = `translateX(${100 * (index - app.slider.currentSlide)}%)`;
+
+            });
+
+        },
     },
 
     // app event listeners
@@ -82,6 +114,11 @@ let app = {
             app.functions.scroll("contact");
         });
 
+        // navigate slider on click
+        app.slider.nextButton.click(() => {
+            app.functions.nextSlideFunction();
+        });
+
     },
     
     // app initializion
@@ -89,6 +126,20 @@ let app = {
 
         // add the event listeners
         app.events();
+
+        // reset the slider
+        app.slider.currentSlide = 0;
+        app.slider.maxSlide = app.slider.slides.length - 1
+
+        // loop through the slides
+        app.slider.slides.forEach((slide, index) => {
+
+            // place the slides end to end
+            slide.style.transform = `translateX(${index * 100}%)`;
+        
+            // once images have loaded, display them on the page
+            slide.style.display = `block`;
+        });
     },
 };
 

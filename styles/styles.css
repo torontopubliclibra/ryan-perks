@@ -357,10 +357,13 @@ h4 {
 
 blockquote {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   padding-right: 0;
   padding-left: 30px;
   border-left: solid #151B23 3px;
+  height: auto;
 }
 blockquote p {
   width: 100% !important;
@@ -376,6 +379,11 @@ blockquote cite {
 }
 blockquote cite .title {
   font-family: "Newsreader-Italic", serif;
+}
+@media only screen and (max-width: 970px) {
+  blockquote {
+    margin-left: 0;
+  }
 }
 @media only screen and (max-width: 768px) {
   blockquote {
@@ -551,6 +559,7 @@ body {
 }
 
 header {
+  background-color: #EEE8E8;
   z-index: 100;
   height: 150px;
   position: sticky;
@@ -689,6 +698,71 @@ section h4 {
   width: 90%;
 }
 
+#testimonial-slider {
+  height: auto;
+  min-height: 500px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+#testimonial-slider blockquote {
+  min-height: 500px;
+}
+@media only screen and (max-width: 970px) {
+  #testimonial-slider {
+    min-height: 650px;
+    width: 90%;
+  }
+  #testimonial-slider blockquote {
+    min-height: 650px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #testimonial-slider {
+    min-height: 750px;
+    width: 90%;
+  }
+  #testimonial-slider blockquote {
+    min-height: 750px;
+  }
+}
+#testimonial-slider .slide {
+  display: none;
+  position: absolute;
+  width: 100%;
+  max-width: 100%;
+  padding-right: 5%;
+  height: 100%;
+  min-height: 500px;
+  transition: transform 0.75s ease-in-out;
+}
+#testimonial-slider .next-slide {
+  position: absolute;
+  bottom: 50%;
+  right: 0%;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #151B23;
+  border-bottom: solid #151B23 2px;
+  font-size: 1rem;
+  transition: background-color 0.5s;
+}
+#testimonial-slider .next-slide img {
+  min-height: 22px;
+  padding-bottom: 5px;
+  min-width: 22px;
+}
+#testimonial-slider .next-slide:hover {
+  background-color: #EEE8E8;
+  transition: background-color 0.75s;
+}
+#testimonial-slider .next-slide:hover img {
+  filter: invert(100%);
+}
+
 #headshot {
   display: flex;
   flex-direction: column;
@@ -773,6 +847,7 @@ footer#main-footer {
 }
 @media only screen and (max-width: 768px) {
   footer#main-footer {
-    margin-top: 150px;
+    height: 150px;
+    margin-top: 130px;
   }
 }

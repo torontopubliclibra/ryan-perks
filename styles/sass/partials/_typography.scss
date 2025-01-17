@@ -128,10 +128,13 @@ h4 {
 
 blockquote {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   padding-right: 0;
   padding-left: 30px;
   border-left: solid $color1 3px;
+  height: auto;
 
   p {
     width: 100% !important;
@@ -149,6 +152,10 @@ blockquote {
     .title {
       font-family: $font2;
     }
+  }
+
+  @media only screen and (max-width: $tablet) {
+    margin-left: 0;
   }
 
   @media only screen and (max-width: $mobile) {
