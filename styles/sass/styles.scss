@@ -233,7 +233,7 @@ section {
     }
     .next-slide {
         position: absolute;
-        bottom: 50%;
+        top: 50%;
         right: 0%;
         width: 40px;
         height: 40px;
@@ -246,15 +246,20 @@ section {
         
         img {
             min-height: 22px;
-            padding-bottom: 5px;
             min-width: 22px;
         }
 
         &:hover {
             background-color: $light;
-            transition: background-color 0.75s;
             img {
                 filter: invert(100%);
+            }
+
+            @media only screen and (max-width: $mobile) {
+                background-color: $color1;
+                img {
+                    filter: invert(0%);
+                }
             }
         }
     }

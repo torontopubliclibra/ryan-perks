@@ -739,7 +739,7 @@ section h4 {
 }
 #testimonial-slider .next-slide {
   position: absolute;
-  bottom: 50%;
+  top: 50%;
   right: 0%;
   width: 40px;
   height: 40px;
@@ -752,15 +752,21 @@ section h4 {
 }
 #testimonial-slider .next-slide img {
   min-height: 22px;
-  padding-bottom: 5px;
   min-width: 22px;
 }
 #testimonial-slider .next-slide:hover {
   background-color: #EEE8E8;
-  transition: background-color 0.75s;
 }
 #testimonial-slider .next-slide:hover img {
   filter: invert(100%);
+}
+@media only screen and (max-width: 768px) {
+  #testimonial-slider .next-slide:hover {
+    background-color: #151B23;
+  }
+  #testimonial-slider .next-slide:hover img {
+    filter: invert(0%);
+  }
 }
 
 #headshot {

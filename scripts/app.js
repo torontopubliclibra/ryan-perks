@@ -80,7 +80,7 @@ let app = {
             app.slider.slides.forEach((slide, index) => {
 
                 // move them all forward by one slide
-                slide.style.transform = `translateX(${100 * (index - app.slider.currentSlide)}%)`;
+                slide.style.transform = `translateX(${105 * (index - app.slider.currentSlide)}%)`;
 
             });
 
@@ -135,7 +135,7 @@ let app = {
         app.slider.slides.forEach((slide, index) => {
 
             // place the slides end to end
-            slide.style.transform = `translateX(${index * 100}%)`;
+            slide.style.transform = `translateX(${index * 105}%)`;
         
             // once images have loaded, display them on the page
             slide.style.display = `block`;
