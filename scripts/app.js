@@ -11,10 +11,12 @@ let app = {
         servicesLink: $("nav .services"),
         testimonialsLink: $("nav .testimonials"),
         contactLink: $("nav .contact"),
+        contactTextLinks: document.querySelectorAll(".contact-text-link"),
         scrollTopButton: $("footer .button"),
     },
 
     slider: {
+        sliderContainer: document.querySelector("#testimonial-slider"),
         slides: document.querySelectorAll(".slide"),
         nextButton: $(".next-slide"),
         currentSlide: 0,
@@ -82,13 +84,28 @@ let app = {
                 // move them all forward by one slide
                 slide.style.transform = `translateX(${105 * (index - app.slider.currentSlide)}%)`;
 
+                // correct the height of the slider to match the currentSlide
+                if ((index) === app.slider.currentSlide) {
+                    const slideHeight = slide.offsetHeight;
+                    app.slider.sliderContainer.style.height = `${slideHeight}px`;
+                }
+
             });
+
 
         },
     },
 
     // app event listeners
     events: () => {
+
+        // watch the screen width and console log when it changes
+        window.addEventListener('resize', () => {
+            console.log(`Screen width changed to: ${window.innerWidth}px`);
+
+            const slideHeight = app.slider.slides[app.slider.currentSlide].offsetHeight;
+            app.slider.sliderContainer.style.height = `${slideHeight}px`;
+        });
 
         // scroll up to top of browser window on button click
         app.elements.scrollTopButton.click((e) => {
@@ -112,6 +129,12 @@ let app = {
         app.elements.contactLink.click((e) => {
             e.preventDefault();
             app.functions.scroll("contact");
+        });
+        app.elements.contactTextLinks.forEach((link) => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                app.functions.scroll("contact");
+            });
         });
 
         // navigate slider on click
@@ -139,6 +162,12 @@ let app = {
         
             // once images have loaded, display them on the page
             slide.style.display = `block`;
+
+            // correct the height of the slider to match the currentSlide
+            if ((index) === app.slider.currentSlide) {
+                const slideHeight = slide.offsetHeight;
+                app.slider.sliderContainer.style.height = `${slideHeight}px`;
+            }
         });
     },
 };

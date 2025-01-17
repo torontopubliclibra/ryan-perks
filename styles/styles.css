@@ -238,8 +238,22 @@ html {
     opacity: 1;
   }
 }
+@keyframes fade-up {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
 main, section *, footer {
-  animation: fade-in 1s;
+  animation: fade-up 1.5s;
+}
+
+#testimonial-slider *, nav li, header h1 {
+  animation: fade-in 2s;
 }
 
 @font-face {
@@ -294,6 +308,10 @@ hr {
   box-shadow: none;
 }
 
+#testimonials hr {
+  margin-bottom: 30px;
+}
+
 label {
   font-family: "Newsreader-Italic", serif;
   color: #EEE8E8;
@@ -301,7 +319,7 @@ label {
 
 input, textarea {
   font-weight: 500;
-  font-family: "PT-Sans-Bold", sans-serif;
+  font-family: "PT-Sans", sans-serif;
   letter-spacing: 3%;
   line-height: 200%;
   color: #191919;
@@ -362,7 +380,6 @@ blockquote {
   flex-direction: column;
   padding-right: 0;
   padding-left: 30px;
-  border-left: solid #151B23 3px;
   height: auto;
 }
 blockquote p {
@@ -650,7 +667,7 @@ main .enter-site {
   padding-bottom: 50px;
 }
 main .enter-site hr {
-  transition: height 0.5s;
+  transition: height 1s;
 }
 main .enter-site:hover hr {
   height: 3px;
@@ -699,32 +716,17 @@ section h4 {
 }
 
 #testimonial-slider {
-  height: auto;
-  min-height: 500px;
+  height: 300px;
   width: 100%;
+  border-left: solid #151B23 3px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-}
-#testimonial-slider blockquote {
-  min-height: 500px;
+  transition: height 0.5s;
 }
 @media only screen and (max-width: 970px) {
   #testimonial-slider {
-    min-height: 650px;
     width: 90%;
-  }
-  #testimonial-slider blockquote {
-    min-height: 650px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  #testimonial-slider {
-    min-height: 750px;
-    width: 90%;
-  }
-  #testimonial-slider blockquote {
-    min-height: 750px;
   }
 }
 #testimonial-slider .slide {
@@ -733,8 +735,6 @@ section h4 {
   width: 100%;
   max-width: 100%;
   padding-right: 5%;
-  height: 100%;
-  min-height: 500px;
   transition: transform 0.75s ease-in-out;
 }
 #testimonial-slider .next-slide {
@@ -825,7 +825,7 @@ section h4 {
   padding: 5px 10px;
 }
 #contact form fieldset textarea {
-  min-height: 150px;
+  min-height: 200px;
 }
 #contact form fieldset p {
   padding-top: 10px;

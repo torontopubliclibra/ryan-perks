@@ -67,6 +67,10 @@ hr {
   box-shadow: none;
 }
 
+#testimonials hr {
+  margin-bottom: 30px;
+}
+
 label {
   font-family: $font2;
   color: $light;
@@ -74,7 +78,7 @@ label {
 
 input, textarea {
   font-weight: 500;
-  font-family: $font4;
+  font-family: $font3;
   letter-spacing: 3%;
   line-height: 200%;
   color: $dark;
@@ -133,7 +137,6 @@ blockquote {
   flex-direction: column;
   padding-right: 0;
   padding-left: 30px;
-  border-left: solid $color1 3px;
   height: auto;
 
   p {

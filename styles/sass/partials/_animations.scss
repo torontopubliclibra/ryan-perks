@@ -9,6 +9,23 @@
     }
 }
 
+// fade-in animation
+@keyframes fade-up {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
 main, section *, footer {
-    animation: fade-in 1s;
+    animation: fade-up 1.5s;
+}
+
+#testimonial-slider *, nav li, header h1 {
+    animation: fade-in 2s;
 }
