@@ -97,6 +97,7 @@ h1 {
   text-align: center;
 
   @media only screen and (max-width: $mobile) {
+    letter-spacing: 0.75%;
     font-size: 3.5rem;
     margin-bottom: 30px;
   }
@@ -135,12 +136,14 @@ blockquote {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding-right: 0;
-  padding-left: 30px;
+  padding: 0;
   height: auto;
+  margin-left: 0;
 
   p {
+    padding-left: 30px;
     width: 100% !important;
+    border-left: solid $color1 2px;
   }
 
   cite {
@@ -158,11 +161,10 @@ blockquote {
   }
 
   @media only screen and (max-width: $tablet) {
-    margin-left: 0;
+    margin-right: 15px;
   }
 
   @media only screen and (max-width: $mobile) {
-    padding-left: 20px;
 
     cite {
       max-width: 95%;

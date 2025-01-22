@@ -158,6 +158,10 @@ section {
     padding-top: 170px;
     margin-bottom: -170px;
 
+    &#about {
+        margin-top: -150px;
+    }
+
     @media only screen and (max-width: $mobile) {
         padding-top: 140px;
         margin-bottom: -140px;
@@ -175,6 +179,10 @@ section {
         width: 90%;
         height: 200px;
         margin-top: 20px;
+
+        &.headshot {
+            height: auto;
+        }
     }
 
     p {
@@ -195,7 +203,6 @@ section {
 #testimonial-slider {
     height: 300px;
     width: 100%;
-    border-left: solid $color1 3px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -210,78 +217,100 @@ section {
         position: absolute;
         width: 100%;
         max-width: 100%;
-        padding-right: 5%;
+        padding-top: 30px;
+        padding-left: 45px;
         transition: transform 0.75s ease-in-out;
+
+        @media only screen and (max-width: $tablet) {
+            padding-left: 0;      
+        }
     }
     .slide-controls {
         display: flex;
         flex-direction: column;
         gap: 10px;
-        position: absolute;
-        top: 0%;
-        right: 0%;
 
         @media only screen and (max-width: $tablet) {
             gap: 5px;        
         }
     }
+    .next-slide {
+        top: 0%;
+        right: 0%;
+    }
+    .prev-slide {
+        top: 0%;
+        left: 0%;
+    }
     .next-slide, .prev-slide {
-        width: 40px;
-        height: 40px;
+        position: absolute;
+        width: 45px;
+        height: 45px;
         padding: 10px;
         cursor: pointer;
-        background-color: $color1;
+        // background-color: $color1;
         border-bottom: solid $color1 2px;
         font-size: 1rem;
         transition: background-color 0.5s;
         
         img {
-            min-height: 22px;
-            min-width: 22px;
+            filter: invert(100%);
+            min-height: 25px;
+            min-width: 25px;
         }
 
         &:hover {
-            background-color: $light;
+            background-color: $color1;
             img {
-                filter: invert(100%);
+                filter: unset;
             }
 
             @media only screen and (max-width: $mobile) {
-                background-color: $color1;
+                background-color: $light;
                 img {
-                    filter: invert(0%);
+                    filter: invert(100%);
                 }
             }
         }
     }
-}
-
-#headshot {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 1260px;
-    width: 85%;
-    padding-top: 40px;
-    margin: 0 auto;
-    margin-bottom: -160px;
-    img {
-        width: 100%;
-        height: auto;
-    }
-
-    @media only screen and (max-width: $mobile) {
-        width: 90%;
-        padding-top: 25px;
-        margin-bottom: -145px;
-
-        img {
-            height: 300px;
-        }
-
+    .slide-counter {
+        position: absolute;
+        top: 0%;
+        left: calc(50% - 22.5px);
+        height: 45px;
+        width: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
+
+// #headshot {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     max-width: 1260px;
+//     width: 85%;
+//     padding-top: 40px;
+//     margin: 0 auto;
+//     margin-bottom: -160px;
+//     img {
+//         width: 100%;
+//         height: auto;
+//     }
+
+//     @media only screen and (max-width: $mobile) {
+//         width: 90%;
+//         padding-top: 25px;
+//         margin-bottom: -145px;
+
+//         img {
+//             height: 300px;
+//         }
+
+//     }
+// }
 
 #contact {
     form {
