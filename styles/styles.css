@@ -693,6 +693,9 @@ section#about {
     padding-top: 140px;
     margin-bottom: -140px;
   }
+  section#about {
+    margin-top: -125px;
+  }
 }
 section h3 {
   width: 100%;
