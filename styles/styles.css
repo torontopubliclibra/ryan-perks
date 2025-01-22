@@ -314,7 +314,7 @@ hr {
 
 label {
   font-family: "Newsreader-Italic", serif;
-  color: #EEE8E8;
+  color: #F2EEEE;
 }
 
 input, textarea {
@@ -339,6 +339,7 @@ h1 {
 }
 @media only screen and (max-width: 768px) {
   h1 {
+    letter-spacing: 0.75%;
     font-size: 3.5rem;
     margin-bottom: 30px;
   }
@@ -378,12 +379,14 @@ blockquote {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding-right: 0;
-  padding-left: 30px;
+  padding: 0;
   height: auto;
+  margin-left: 0;
 }
 blockquote p {
+  padding-left: 30px;
   width: 100% !important;
+  border-left: solid #151B23 2px;
 }
 blockquote cite {
   max-width: 90%;
@@ -399,13 +402,10 @@ blockquote cite .title {
 }
 @media only screen and (max-width: 970px) {
   blockquote {
-    margin-left: 0;
+    margin-right: 15px;
   }
 }
 @media only screen and (max-width: 768px) {
-  blockquote {
-    padding-left: 20px;
-  }
   blockquote cite {
     max-width: 95%;
     font-size: 1rem;
@@ -419,7 +419,7 @@ button {
   font-family: "Newsreader-Italic", serif;
   font-size: 1.5rem;
   text-decoration: none;
-  color: #EEE8E8;
+  color: #F2EEEE;
   border: none;
   border-bottom: solid #151B23 2px;
   cursor: pointer;
@@ -427,7 +427,7 @@ button {
   transition: background-color 0.5s;
 }
 button:hover {
-  background-color: #EEE8E8;
+  background-color: #F2EEEE;
   color: #191919;
 }
 @media only screen and (max-width: 768px) {
@@ -437,7 +437,7 @@ button:hover {
   }
   button:hover {
     background-color: #151B23;
-    color: #EEE8E8;
+    color: #F2EEEE;
   }
 }
 
@@ -457,11 +457,11 @@ button:hover {
   font-family: "Newsreader-Italic", serif;
   font-weight: 400;
   font-size: 1.5rem;
-  color: #EEE8E8;
+  color: #F2EEEE;
   text-decoration: none;
 }
 .button:hover {
-  background-color: #EEE8E8;
+  background-color: #F2EEEE;
 }
 .button:hover a {
   color: #191919;
@@ -479,7 +479,7 @@ button:hover {
     background-color: #151B23;
   }
   .button:hover a {
-    color: #EEE8E8;
+    color: #F2EEEE;
     font-style: normal;
   }
 }
@@ -496,10 +496,10 @@ header nav ul li {
   font-family: "Newsreader-Italic", serif;
   font-weight: 400;
   font-size: 1.5rem;
-  color: #EEE8E8;
+  color: #F2EEEE;
 }
 header nav ul li a {
-  color: #EEE8E8;
+  color: #F2EEEE;
   text-decoration: none;
 }
 @media only screen and (max-width: 768px) {
@@ -554,7 +554,7 @@ footer a:hover {
 }
 
 body {
-  background-color: #EEE8E8;
+  background-color: #F2EEEE;
   overflow-x: hidden;
   width: 100%;
   max-width: 100vw;
@@ -576,7 +576,7 @@ body {
 }
 
 header {
-  background-color: #EEE8E8;
+  background-color: #F2EEEE;
   z-index: 100;
   height: 150px;
   position: sticky;
@@ -612,7 +612,7 @@ header nav ul li a, header h1 ul li a {
   border-bottom: solid #151B23 1.5px;
 }
 header nav ul li a:hover, header h1 ul li a:hover {
-  border-bottom: solid #EEE8E8 1.5px;
+  border-bottom: solid #F2EEEE 1.5px;
 }
 @media only screen and (max-width: 768px) {
   header nav ul li a, header h1 ul li a {
@@ -624,11 +624,11 @@ header nav ul li a:hover, header h1 ul li a:hover {
 }
 header h1 {
   width: 95%;
-  background-color: #EEE8E8;
+  background-color: #F2EEEE;
   justify-content: left;
 }
 header h1 a {
-  border-bottom: solid #EEE8E8 2px;
+  border-bottom: solid #F2EEEE 2px;
   transition: border-bottom 0.5s;
 }
 header h1 a:hover {
@@ -642,7 +642,7 @@ header h1 a:hover {
     height: 50px;
   }
   header h1 a:hover {
-    border-bottom: solid #EEE8E8 2px;
+    border-bottom: solid #F2EEEE 2px;
   }
 }
 
@@ -651,7 +651,7 @@ main {
   justify-content: center;
   align-items: center;
   z-index: 100;
-  background-color: #EEE8E8;
+  background-color: #F2EEEE;
   min-height: calc(100vh - 251px);
   padding-bottom: 10px;
 }
@@ -680,15 +680,21 @@ main .enter-site:hover hr {
 }
 
 section {
-  background-color: #EEE8E8;
+  background-color: #F2EEEE;
   padding: 20px 0;
   padding-top: 170px;
   margin-bottom: -170px;
+}
+section#about {
+  margin-top: -150px;
 }
 @media only screen and (max-width: 768px) {
   section {
     padding-top: 140px;
     margin-bottom: -140px;
+  }
+  section#about {
+    margin-top: -125px;
   }
 }
 section h3 {
@@ -703,6 +709,9 @@ section .banner {
   width: 90%;
   height: 200px;
   margin-top: 20px;
+}
+section .banner.headshot {
+  height: auto;
 }
 section p {
   width: 90%;
@@ -719,7 +728,6 @@ section h4 {
 #testimonial-slider {
   height: 300px;
   width: 100%;
-  border-left: solid #151B23 3px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -735,75 +743,71 @@ section h4 {
   position: absolute;
   width: 100%;
   max-width: 100%;
-  padding-right: 5%;
+  padding-top: 30px;
+  padding-left: 45px;
   transition: transform 0.75s ease-in-out;
+}
+@media only screen and (max-width: 970px) {
+  #testimonial-slider .slide {
+    padding-left: 0;
+  }
 }
 #testimonial-slider .slide-controls {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  position: absolute;
-  top: 0%;
-  right: 0%;
 }
 @media only screen and (max-width: 970px) {
   #testimonial-slider .slide-controls {
     gap: 5px;
   }
 }
+#testimonial-slider .next-slide {
+  top: 0%;
+  right: 0%;
+}
+#testimonial-slider .prev-slide {
+  top: 0%;
+  left: 0%;
+}
 #testimonial-slider .next-slide, #testimonial-slider .prev-slide {
-  width: 40px;
-  height: 40px;
+  position: absolute;
+  width: 45px;
+  height: 45px;
   padding: 10px;
   cursor: pointer;
-  background-color: #151B23;
   border-bottom: solid #151B23 2px;
   font-size: 1rem;
   transition: background-color 0.5s;
 }
 #testimonial-slider .next-slide img, #testimonial-slider .prev-slide img {
-  min-height: 22px;
-  min-width: 22px;
+  filter: invert(100%);
+  min-height: 25px;
+  min-width: 25px;
 }
 #testimonial-slider .next-slide:hover, #testimonial-slider .prev-slide:hover {
-  background-color: #EEE8E8;
+  background-color: #151B23;
 }
 #testimonial-slider .next-slide:hover img, #testimonial-slider .prev-slide:hover img {
-  filter: invert(100%);
+  filter: unset;
 }
 @media only screen and (max-width: 768px) {
   #testimonial-slider .next-slide:hover, #testimonial-slider .prev-slide:hover {
-    background-color: #151B23;
+    background-color: #F2EEEE;
   }
   #testimonial-slider .next-slide:hover img, #testimonial-slider .prev-slide:hover img {
-    filter: invert(0%);
+    filter: invert(100%);
   }
 }
-
-#headshot {
+#testimonial-slider .slide-counter {
+  position: absolute;
+  top: 0%;
+  left: calc(50% - 22.5px);
+  height: 45px;
+  width: 45px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 1260px;
-  width: 85%;
-  padding-top: 40px;
-  margin: 0 auto;
-  margin-bottom: -160px;
-}
-#headshot img {
-  width: 100%;
-  height: auto;
-}
-@media only screen and (max-width: 768px) {
-  #headshot {
-    width: 90%;
-    padding-top: 25px;
-    margin-bottom: -145px;
-  }
-  #headshot img {
-    height: 300px;
-  }
 }
 
 #contact form {
@@ -831,7 +835,7 @@ section h4 {
 }
 #contact form fieldset input, #contact form fieldset textarea {
   border: none;
-  background-color: rgba(238, 232, 232, 0.9);
+  background-color: rgba(242, 238, 238, 0.9);
   min-height: 40px;
   padding: 5px 10px;
 }

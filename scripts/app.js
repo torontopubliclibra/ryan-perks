@@ -20,8 +20,10 @@ let app = {
         slides: document.querySelectorAll(".slide"),
         nextButton: $(".next-slide"),
         prevButton: $(".prev-slide"),
-        currentSlide: 0,
-        maxSlide: 0,
+        slideCounter: $(".slide-counter small"),
+        counterText: '',
+        currentSlide: 1,
+        maxSlide: 1
     },
 
     // app functions
@@ -36,9 +38,13 @@ let app = {
             // if the direction is "top", set the location to the top of the page
             if (direction === "top") {
                 location = 0;
+                history.pushState(null, null, ' ');
             // if the direction is anything else, set the location to the top of that section
             } else {
                 location = app.elements[direction].offset().top;
+                setTimeout(() => {
+                    history.pushState(null, null, `#${direction}`);
+                }, 300);
             };
 
             // smoothly scroll to the location
@@ -71,7 +77,7 @@ let app = {
             if (app.slider.currentSlide === app.slider.maxSlide) {
 
                 // change it to the first slide
-                app.slider.currentSlide = 0;
+                app.slider.currentSlide = 1;
 
             } else {
 
@@ -83,10 +89,10 @@ let app = {
             app.slider.slides.forEach((slide, index) => {
 
                 // move them all forward by one slide
-                slide.style.transform = `translateX(${105 * (index - app.slider.currentSlide)}%)`;
+                slide.style.transform = `translateX(${105 * (index - (app.slider.currentSlide - 1))}%)`;
 
                 // correct the height of the slider to match the currentSlide
-                if ((index) === app.slider.currentSlide) {
+                if ((index) === (app.slider.currentSlide - 1)) {
                     const slideHeight = slide.offsetHeight;
                     app.slider.sliderContainer.style.height = `${slideHeight}px`;
                 }
@@ -97,6 +103,8 @@ let app = {
                 window.scrollTo({top: app.elements.testimonials.offset().top, behavior: "smooth"});
             }
 
+            app.slider.counterText = `${app.slider.currentSlide} / ${app.slider.maxSlide}`;
+            app.slider.slideCounter.text(app.slider.counterText);
 
         },
 
@@ -104,7 +112,7 @@ let app = {
         prevSlideFunction: () => {
 
             // if the current slide is the first
-            if (app.slider.currentSlide === 0) {
+            if (app.slider.currentSlide === 1) {
 
                 // change it to the last slide
                 app.slider.currentSlide = app.slider.maxSlide;
@@ -119,10 +127,10 @@ let app = {
             app.slider.slides.forEach((slide, index) => {
 
                 // move them all back by one slide
-                slide.style.transform = `translateX(${105 * (index - app.slider.currentSlide)}%)`;
+                slide.style.transform = `translateX(${105 * (index - (app.slider.currentSlide - 1))}%)`;
 
                 // correct the height of the slider to match the currentSlide
-                if ((index) === app.slider.currentSlide) {
+                if ((index) === (app.slider.currentSlide - 1)) {
                     const slideHeight = slide.offsetHeight;
                     app.slider.sliderContainer.style.height = `${slideHeight}px`;
                 }
@@ -133,6 +141,8 @@ let app = {
                 window.scrollTo({top: app.elements.testimonials.offset().top, behavior: "smooth"});
             }
 
+            app.slider.counterText = `${app.slider.currentSlide} / ${app.slider.maxSlide}`;
+            app.slider.slideCounter.text(app.slider.counterText);
 
         },
     },
@@ -142,9 +152,7 @@ let app = {
 
         // watch the screen width and console log when it changes
         window.addEventListener('resize', () => {
-            console.log(`Screen width changed to: ${window.innerWidth}px`);
-
-            const slideHeight = app.slider.slides[app.slider.currentSlide].offsetHeight;
+            const slideHeight = app.slider.slides[app.slider.currentSlide - 1].offsetHeight;
             app.slider.sliderContainer.style.height = `${slideHeight}px`;
         });
 
@@ -195,8 +203,10 @@ let app = {
         app.events();
 
         // reset the slider
-        app.slider.currentSlide = 0;
-        app.slider.maxSlide = app.slider.slides.length - 1
+        app.slider.currentSlide = 1;
+        app.slider.maxSlide = app.slider.slides.length;
+        app.slider.counterText = `${app.slider.currentSlide} / ${app.slider.maxSlide}`;
+        app.slider.slideCounter.text(app.slider.counterText);
 
         // loop through the slides
         app.slider.slides.forEach((slide, index) => {
@@ -208,7 +218,7 @@ let app = {
             slide.style.display = `block`;
 
             // correct the height of the slider to match the currentSlide
-            if ((index) === app.slider.currentSlide) {
+            if ((index) === app.slider.currentSlide - 1) {
                 const slideHeight = slide.offsetHeight;
                 app.slider.sliderContainer.style.height = `${slideHeight}px`;
             }
